@@ -17,18 +17,20 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+
     <body>
 
-        <h1>GereFina</h1>
+        <div class="container">
 
-        <div class="btn-group">
-            <a href='index.php'><button type="button" class="btn btn-default">Home</button></a>
-            <a href='index.php?class=Transaction&function=read'><button type="button" class="btn btn-default">Transaction</button></a>
-            <a href='index.php?class=Account&function=read'><button type="button" class="btn btn-default">Account</button></a>
-            <a href='index.php?class=Category&function=read'><button type="button" class="btn btn-default">Category</button></a>
-            <a href='index.php?class=Account&function=create'><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
-            
-        </div>
+            <h1>GereFina</h1>
 
+            <div class="btn-group">
+                <a href='index.php'><button type="button" class="btn btn-default">Home</button></a>
+                <a href='index.php?class=Transaction&function=read'><button type="button" class="btn btn-default">Transaction</button></a>
+                <a href='index.php?class=Account&function=read'><button type="button" class="btn btn-default">Account</button></a>
+                <a href='index.php?class=Category&function=read'><button type="button" class="btn btn-default">Category</button></a>
+                <a href='index.php?class=Account&function=create'><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
+            </div>
 
-        <div>
+            <br>
+            <br>

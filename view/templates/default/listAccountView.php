@@ -1,6 +1,6 @@
 <div class="table-responsive">
 
-    <table class="table">
+    <table class="table table-striped">
 
         <tr>
             <th>ID</th>
@@ -22,11 +22,11 @@
 
                 echo '
                     <td>
-                        <button type="button" class="btn btn-default btn-sl">
+                        <button type="button" class="btn btn-default btn-xs">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </button>
                         
-                        <button type="button" class="btn btn-default btn-sl">
+                        <button type="button" class="btn btn-default btn-xs">
                             <span class="glyphicon glyphicon-trash"></span>
                         </button>
                     </td>';

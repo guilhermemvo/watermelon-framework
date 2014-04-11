@@ -7,10 +7,10 @@
  */
 class AccountController {
 
-    public function create() {
+    const INSERT_ACCOUNT_SUCCESS = 'Conta inserida com sucesso.';
+    const INSERT_ACCOUNT_FAIL = 'A Conta não foi cadastrada. Tente novamente mais tarde.';
 
-        define('INSERT_ACCOUNT_SUCCESS', "Conta inserida com sucesso.");
-        define('INSERT_ACCOUNT_FAIL', "A Conta não foi cadastrada. Tente novamente mais tarde.");
+    public function create() {
 
         $accountObject = new AccountObject();
 
@@ -24,14 +24,13 @@ class AccountController {
 
             try {
                 if ($accountModel->create($accountObject)) {
-                    echo INSERT_ACCOUNT_SUCCESS . '<br><br>';
+                    echo self::INSERT_ACCOUNT_SUCCESS . '<br><br>';
                     $this->read();
                 } else {
-                    echo INSERT_ACCOUNT_FAIL . '<br><br>';
+                    echo self::INSERT_ACCOUNT_FAIL . '<br><br>';
                 }
             } catch (Exception $exc) {
                 echo '<br>Caiu na Exception!<br>';
-                exit;
                 echo $exc->getMessage();
             }
         } else {
