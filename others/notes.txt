@@ -1,0 +1,8 @@
+* codificação do banco de dados está errada quando inserido um caracter especial em uma transaction;
+* implementar try catch na inserção de dados no banco para poder lançar o erro na view;
+* alterar extensões das views e, estudar a implementação das viws com a ferramenta BLADE VIEWS;
+* implementar as views com bootstrap;
+* implementar as views com os gráficos que os cara da manahatan utilizaram nos produtos deles;
+* Usar Google charts para gerar os gráficos do mal;
+* implementar sistema de login;
+* inserir validadores da W3C;
