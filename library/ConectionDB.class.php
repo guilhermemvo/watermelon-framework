@@ -5,7 +5,7 @@ class ConectionDB {
     private $pdo;
 
     function __construct() {
-        $this->pdo = new PDO("mysql:host=127.0.0.1;dbname=gerefina", 'gmoliveira', 'ccgsi1.616v');
+        $this->pdo = new PDO("mysql:host=127.0.0.1;dbname=gerefina", 'admin', 'password');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
