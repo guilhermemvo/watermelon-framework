@@ -7,10 +7,9 @@ class AccountController {
 
     public function create() {
 
-        $accountObject = new AccountObject();
-
         if ($accountObject->validateData($_POST)) {
 
+            $accountObject = new AccountObject();
             $accountObject->setName($_POST['name']);
             $accountObject->setDescription($_POST['description']);
             $accountObject->setBalance($_POST['balance']);
@@ -25,7 +24,7 @@ class AccountController {
                     echo self::INSERT_ACCOUNT_FAIL . '<br><br>';
                 }
             } catch (Exception $exc) {
-                echo '<br>Caiu na Exception!<br>';
+                echo '<pre>Exception!</pre>';
                 echo $exc->getMessage();
             }
         } else {
@@ -42,10 +41,12 @@ class AccountController {
 
             $objectList = $accountModel->select();
 
-            View::setParams(array(
-                'name' => 'Painho Gay',
-                'data' => $objectList
-            ));
+            View::setParams(
+                array(
+                    'name' => 'Account',
+                    'data' => $objectList
+                )
+            );
 
             View::output('listAccountView');
         } catch (Exception $exc) {
