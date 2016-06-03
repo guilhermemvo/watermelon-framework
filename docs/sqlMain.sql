@@ -1,14 +1,14 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-
-CREATE SCHEMA IF NOT EXISTS `gerefina` DEFAULT CHARACTER SET utf8 ;
-USE `gerefina` ;
+CREATE USER 'watermelon'@'%' IDENTIFIED WITH mysql_native_password AS '***';
+GRANT ALL PRIVILEGES ON *.* TO 'watermelon'@'%' REQUIRE NONE WITH
+GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+CREATE DATABASE IF NOT EXISTS `watermelon`;
+GRANT ALL PRIVILEGES ON `watermelon`.* TO 'watermelon'@'%';
+GRANT ALL PRIVILEGES ON `watermelon\_%`.* TO 'watermelon'@'%';
 
 -- -----------------------------------------------------
--- Table `gerefina`.`account`
+-- Table `watermelon`.`account`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `gerefina`.`account` (
+CREATE  TABLE IF NOT EXISTS `watermelon`.`account` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(255) NOT NULL ,
   `description` TEXT NULL ,
@@ -18,9 +18,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gerefina`.`category`
+-- Table `watermelon`.`category`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `gerefina`.`category` (
+CREATE  TABLE IF NOT EXISTS `watermelon`.`category` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(255) NOT NULL ,
   `description` TEXT NULL ,
@@ -29,9 +29,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `gerefina`.`transaction`
+-- Table `watermelon`.`transaction`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `gerefina`.`transaction` (
+CREATE  TABLE IF NOT EXISTS `watermelon`.`transaction` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(255) NOT NULL ,
   `description` TEXT NULL ,
@@ -45,21 +45,16 @@ CREATE  TABLE IF NOT EXISTS `gerefina`.`transaction` (
   INDEX `fk_transaction_category1_idx` (`category_id` ASC) ,
   CONSTRAINT `fk_transaction_account`
     FOREIGN KEY (`account_id` )
-    REFERENCES `gerefina`.`account` (`id` )
+    REFERENCES `watermelon`.`account` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_transaction_category1`
     FOREIGN KEY (`category_id` )
-    REFERENCES `gerefina`.`category` (`id` )
+    REFERENCES `watermelon`.`category` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
 -- Initial Inserts
@@ -96,7 +91,7 @@ INSERT INTO transaction (
     account_id,
     date,
     value
-) VALUES ( 
+) VALUES (
     'Primeira Transaction',
     'Transaction Inicial',
     'credit',

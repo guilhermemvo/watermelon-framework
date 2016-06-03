@@ -22,7 +22,6 @@
                 <a href='index.php?class=Account&function=read'><button type="button" class="btn btn-default">Account</button></a>
                 <a href='index.php?class=Category&function=read'><button type="button" class="btn btn-default">Category</button></a>
                 <a href='index.php?class=Account&function=create'><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
-
             </div>
 
             <br>
