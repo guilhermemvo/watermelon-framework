@@ -19,7 +19,7 @@ class CategoryModel extends BaseModel {
         try {
             return $this->call(self::CREATE_QUERY, $params, null);
         } catch (Exception $exc) {
-            //guilhermemvo - Gravar Log de erros aqui
+            echo '<pre>Exception!</pre>';
             echo $exc->getMessage();
         }
     }
@@ -28,7 +28,7 @@ class CategoryModel extends BaseModel {
         try {
             return $this->call(self::SELECT_QUERY, null, true);
         } catch (Exception $exc) {
-            //guilhermemvo - Gravar Log de erros aqui
+            echo '<pre>Exception!</pre>';
             echo $exc->getMessage();
         }
     }

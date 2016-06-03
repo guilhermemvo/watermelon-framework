@@ -20,7 +20,7 @@ class AccountModel extends BaseModel {
         try {
             return $this->call(self::CREATE_QUERY, $params, null);
         } catch (Exception $exc) {
-            //guilhermemvo - Gravar Log de erros aqui
+            echo '<pre>Exception!</pre>';
             throw new Exception($exc->getMessage());
         }
     }
@@ -29,7 +29,7 @@ class AccountModel extends BaseModel {
         try {
             return $this->call(self::SELECT_QUERY, null, true);
         } catch (Exception $exc) {
-            //guilhermemvo - Gravar Log de erros aqui
+            echo '<pre>Exception!</pre>';
             throw new Exception($exc->getMessage());
         }
     }
