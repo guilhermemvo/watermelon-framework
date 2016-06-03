@@ -2,15 +2,14 @@
 
 class TransactionController {
 
+    const INSERT_TRANSACTION_SUCCESS = "Transação inserida com sucesso.";
+    const INSERT_TRANSACTION_FAIL = "A Transação não foi cadastrada. Tente novamente mais tarde.";
+
     public function create() {
-
-        define('INSERT_TRANSACTION_SUCCESS', "Transação inserida com sucesso.");
-        define('INSERT_TRANSACTION_FAIL', "A Transação não foi cadastrada. Tente novamente mais tarde.");
-
-        $transactionObject = new TransactionObject();
 
         if ($transactionObject->validateData($_POST)) {
 
+            $transactionObject = new TransactionObject();
             $transactionObject->setName($_POST['name']);
             $transactionObject->setDescription($_POST['description']);
             $transactionObject->setType($_POST['type']);
@@ -29,10 +28,12 @@ class TransactionController {
                     echo INSERT_TRANSACTION_FAIL . '<br><br>';
                 }
             } catch (Exception $exc) {
+                echo '<pre>Exception!</pre>';
                 echo $exc->getMessage();
             }
         } else {
-            include './view/newTransactionView.php';
+
+            View::output('newTransactionView');
         }
     }
 
@@ -41,9 +42,20 @@ class TransactionController {
         $transactionModel = new TransactionModel();
 
         try {
+
             $objectList = $transactionModel->select();
-            include './view/listTransactionView.php';
+
+            View::setParams(
+                array(
+                    'name' => 'Transaction',
+                    'data' => $objectList
+                )
+            );
+
+            View::output('listTransactionView');
+
         } catch (Exception $exc) {
+            echo '<pre>Exception!</pre>';
             echo $exc->getMessage();
         }
     }

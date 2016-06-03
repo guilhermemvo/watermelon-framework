@@ -49,7 +49,9 @@ class AccountController {
             );
 
             View::output('listAccountView');
+            
         } catch (Exception $exc) {
+            echo '<pre>Exception!</pre>';
             echo $exc->getMessage();
         }
     }

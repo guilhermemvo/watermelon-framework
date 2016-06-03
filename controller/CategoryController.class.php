@@ -2,12 +2,10 @@
 
 class CategoryController {
 
+    const INSERT_CATEGORY_SUCCESS = "Categoria inserida com sucesso.";
+    const INSERT_CATEGORY_FAIL = "A Categoria não foi cadastrada. Tente novamente mais tarde.";
+
     public function create() {
-
-        define('INSERT_CATEGORY_SUCCESS', "Categoria inserida com sucesso.");
-        define('INSERT_CATEGORY_FAIL', "A Categoria não foi cadastrada. Tente novamente mais tarde.");
-
-        $categoryObject = new CategoryObject();
 
         if ($categoryObject->validateData($_POST)) {
 
@@ -24,10 +22,12 @@ class CategoryController {
                 }
 
             } catch (Exception $exc) {
+                echo '<pre>Exception!</pre>';
                 echo $exc->getMessage();
             }
         } else {
-            include './view/newCategoryView.php';
+
+            View::output('newCategoryView');
         }
     }
 
@@ -36,12 +36,22 @@ class CategoryController {
         $categoryModel = new CategoryModel();
 
         try {
+
             $objectList = $categoryModel->select();
-            include './view/listCategoryView.php';
+
+            View::setParams(
+                array(
+                    'name' => 'Category',
+                    'data' => $objectList
+                )
+            );
+
+            View::output('listCategoryView');
+
         } catch (Exception $exc) {
+            echo '<pre>Exception!</pre>';
             echo $exc->getMessage();
         }
-
     }
 
     public function update() {
