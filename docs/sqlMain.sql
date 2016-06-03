@@ -96,7 +96,7 @@ INSERT INTO transaction (
     account_id,
     date,
     value
-) VALUES (
+) VALUES ( 
     'Primeira Transaction',
     'Transaction Inicial',
     'credit',
