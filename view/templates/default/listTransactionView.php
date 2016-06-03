@@ -15,7 +15,7 @@
 
 		<?php
 
-			foreach ($objectList as $key => $object) {
+			foreach ($data as $key => $object) {
 
 				echo '<tr>';
 
