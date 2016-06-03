@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of TransactionController
- *
- * @author gmoliveira
- */
 class TransactionController {
 
     public function create() {

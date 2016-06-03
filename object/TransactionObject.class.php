@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of TransactionObject
- *
- * @author gmoliveira
- */
 class TransactionObject {
 
     private $id, $name, $description, $type, $category, $account, $date, $value;
@@ -21,7 +16,7 @@ class TransactionObject {
         return $this->name;
     }
 
-    public function setName($name) {        
+    public function setName($name) {
         $this->name = $name;
     }
 
@@ -73,7 +68,7 @@ class TransactionObject {
         $this->value = $value;
     }
 
-    public function validateData($data) {        
+    public function validateData($data) {
         if ($data) {
             return 1;
         } else {

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of AccountObject
- *
- * @author gmoliveira
- */
 class AccountObject {
 
     private $id, $name, $description, $balance;

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of CategoryModel
- *
- * @author gmoliveira
- */
 class CategoryModel extends BaseModel {
 
     const CREATE_QUERY = 'INSERT INTO category (name,description) VALUES (:name,:description)';

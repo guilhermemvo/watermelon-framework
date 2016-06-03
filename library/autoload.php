@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Description of Autoload
- *
- * @author gmoliveira
- */
-
 function __autoload($class_name) {
 
     if (substr_count($class_name, 'Controller')) {

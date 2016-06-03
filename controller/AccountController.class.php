@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of AccountController
- *
- * @author gmoliveira
- */
 class AccountController {
 
     const INSERT_ACCOUNT_SUCCESS = 'Conta inserida com sucesso.';

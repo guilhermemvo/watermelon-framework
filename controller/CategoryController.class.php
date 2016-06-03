@@ -1,13 +1,8 @@
 <?php
 
-/**
- * Description of CategoryController
- *
- * @author gmoliveira
- */
 class CategoryController {
 
-    public function create() { 
+    public function create() {
 
         define('INSERT_CATEGORY_SUCCESS', "Categoria inserida com sucesso.");
         define('INSERT_CATEGORY_FAIL', "A Categoria não foi cadastrada. Tente novamente mais tarde.");
@@ -27,7 +22,7 @@ class CategoryController {
                     echo INSERT_CATEGORY_SUCCESS . '<br><br>';
                     $this->read();
                 }
-                
+
             } catch (Exception $exc) {
                 echo $exc->getMessage();
             }
@@ -46,7 +41,7 @@ class CategoryController {
         } catch (Exception $exc) {
             echo $exc->getMessage();
         }
-        
+
     }
 
     public function update() {

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of CategoryObject
- *
- * @author gmoliveira
- */
 class CategoryObject {
 
     private $id, $name, $description;
@@ -32,7 +27,7 @@ class CategoryObject {
     public function setDescription($description) {
         $this->description = $description;
     }
-    
+
     public function validateData($data) {
         if ($data) {
             return 1;

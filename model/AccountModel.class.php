@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of AccountModel
- *
- * @author gmoliveira
- */
 class AccountModel extends BaseModel {
 
     const CREATE_QUERY = 'INSERT INTO account (name,description,balance) VALUES (:name,:description,:balance)';

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of TransactionModel
- *
- * @author gmoliveira
- */
 class TransactionModel extends BaseModel {
 
     const CREATE_QUERY = 'INSERT INTO transaction (name,description,type,category_id,account_id,date,value) VALUES (:name,:description,:type,:category,:account,:date,:value)';
