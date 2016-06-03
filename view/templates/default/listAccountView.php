@@ -2,41 +2,36 @@
 
     <table class="table table-striped">
 
-        <tr>
+        <thead>
             <th>ID</th>
             <th>NOME</th>
             <th>DESCRIÇÃO</th>
             <th>SALDO</th>
-            <th>OPÇÕES</th>            
-        </tr>
+            <th>OPÇÕES</th>
+        </thead>
 
         <?php
-        foreach ($data as $key => $object) {
 
-            echo '<tr>';
+            foreach ($data as $key => $object) {
 
-                echo '<td>' . $object->id . '</td>';
-                echo '<td>' . $object->name . '</td>';
-                echo '<td>' . $object->description . '</td>';
-                echo '<td>' . $object->balance . '</td>';
+                echo "
 
-                echo '
-                    <td>
-                        <button type="button" class="btn btn-default btn-xs">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                        </button>
-                        
-                        <button type="button" class="btn btn-default btn-xs">
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </button>
-                    </td>';
-
-                
-                
-            echo '</tr>';
-        }
+                    <tbody>
+                        <td> $object->id </td>
+                        <td> $object->name </td>
+                        <td> $object->description </td>
+                        <td> $object->balance </td>
+                        <td>
+                            <button type='button' class='btn btn-default btn-xs'>
+                                <span class='glyphicon glyphicon-pencil'></span>
+                            </button>
+                            <button type='button' class='btn btn-default btn-xs'>
+                                <span class='glyphicon glyphicon-trash'></span>
+                            </button>
+                        </td>
+                    </tbody>
+                ";
+            }
         ?>
-
     </table>
-
 </div>

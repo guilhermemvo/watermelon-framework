@@ -1,39 +1,45 @@
-<div>
+<div class="table-responsive">
 
-	<table border='1px'>
+    <table class="table table-striped">
 
-		<tr style="background-color: #fff000;">
-			<td>ID</td>
-			<td>NOME</td>
-			<td>DESCRIÇÃO</td>
-			<td>TIPO</td>
-			<td>ID DA CATEGORIA</td>
-			<td>ID DA CONTA</td>
-			<td>DATA</td>
-			<td>VALOR</td>
-		</tr>
+        <thead>
+			<th>ID</th>
+			<th>NOME</th>
+			<th>DESCRIÇÃO</th>
+			<th>TIPO</th>
+			<th>ID DA CATEGORIA</th>
+			<th>ID DA CONTA</th>
+			<th>DATA</th>
+			<th>VALOR</th>
+			<th>OPÇÕES</th>
+		</thead>
 
 		<?php
 
 			foreach ($data as $key => $object) {
 
-				echo '<tr>';
+				echo "
 
-					echo '<td>' . $object->id . '</td>';
-					echo '<td>' . $object->name . '</td>';
-					echo '<td>' . $object->description . '</td>';
-					echo '<td>' . $object->type . '</td>';
-					echo '<td>' . $object->category_id . '</td>';
-					echo '<td>' . $object->account_id . '</td>';
-					echo '<td>' . $object->date . '</td>';
-					echo '<td>' . $object->value . '</td>';
-
-				echo '</tr>';
-
+					<tbody>
+						<td> $object->id </td>
+						<td> $object->name </td>
+						<td> $object->description </td>
+						<td> $object->type </td>
+						<td> $object->category_id </td>
+						<td> $object->account_id </td>
+						<td> $object->date </td>
+						<td> $object->value </td>
+						<td>
+                            <button type='button' class='btn btn-default btn-xs'>
+                                <span class='glyphicon glyphicon-pencil'></span>
+                            </button>
+                            <button type='button' class='btn btn-default btn-xs'>
+                                <span class='glyphicon glyphicon-trash'></span>
+                            </button>
+                        </td>
+					</tbody>
+				";
 			}
-
 		?>
-
 	</table>
-
 </div>

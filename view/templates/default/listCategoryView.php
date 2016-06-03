@@ -1,30 +1,34 @@
-<div>
+<div class="table-responsive">
 
-	<table border='1px'>
+    <table class="table table-striped">
 
-		<tr style="background-color: #fff000;">
-			<td>ID</td>
-			<td>NOME</td>
-			<td>DESCRIÇÃO</td>
-		</tr>
-
+        <thead>
+			<th>ID</th>
+			<th>NOME</th>
+			<th>DESCRIÇÃO</th>
+			<th>OPÇÕES</th>
+		</thead>
 
 		<?php
 
 			foreach ($data as $key => $object) {
 
-				echo '<tr>';
-
-					echo '<td>' . $object->id . '</td>';
-					echo '<td>' . $object->name . '</td>';
-					echo '<td>' . $object->description . '</td>';
-
-				echo '</tr>';
-
+				echo "
+					<tbody>
+						<td> $object->id </td>
+						<td> $object->name </td>
+						<td> $object->description </td>
+						<td>
+							<button type='button' class='btn btn-default btn-xs'>
+								<span class='glyphicon glyphicon-pencil'></span>
+							</button>
+							<button type='button' class='btn btn-default btn-xs'>
+								<span class='glyphicon glyphicon-trash'></span>
+							</button>
+						</td>
+					</tbody>
+				";
 			}
-
 		?>
-
 	</table>
-
 </div>
