@@ -1,5 +1,5 @@
 <?php
-
+//hacktoberfest 2016
 include_once './library/configure.php';
 include_once './library/autoload.php';
 include_once './view/templates/default/commons/top.php';
